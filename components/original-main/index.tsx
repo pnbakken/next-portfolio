@@ -139,7 +139,7 @@ const OriginalMain = () => {
                     <div className="mb-3">
                         
                         <div id="form-message"></div>
-                        <button type="submit" id="submit-message" className="form-button pseudo-button has-text" data-textName="sendButton">Send</button>
+                        <button type="submit" id="submit-message" className="form-button pseudo-button has-text" data-textname="sendButton">Send</button>
                     </div>  
                     
                 </form>
