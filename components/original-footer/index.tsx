@@ -8,7 +8,7 @@ const OriginalFooter = () => {
             <button className="discrete-button has-text" id="clear-language" value="Clear language selection" style={{display:"none"}} data-textname="removeStoredLanguage">Clear language selection</button>
         </div>
         
-        <div className="footer-links"><span className="has-text" data-textname="viewOnGH">View this site on</span> <a href="https://github.com/pnbakken/personal-portfolio">GitHub</a></div>
+        <div className="footer-links"><span className="has-text" data-textname="viewOnGH">View this site on</span> <a href="https://github.com/pnbakken/next-portfolio">GitHub</a></div>
     </footer>
     );
 }
