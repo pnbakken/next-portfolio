@@ -1,0 +1,31 @@
+/*******
+* Colour variables
+*******/
+
+//Brand colours
+
+    $color-abyss-blue: #111120;
+    $color-abyss-gray: #383844;
+    $color-abyss-blue-transparent: #111120f0;
+    $color-white: #fbfbff;
+
+    $color-medium-blue: #197aae;
+    $color-dark-blue: #0C4869;
+    $color-dark-blue-gray: #4A6D80;
+
+    $color-blue-gradient: linear-gradient($color-medium-blue, 80%, $color-dark-blue);
+
+// System colours
+
+    $color-orange: #b3521a;
+    $color-yellow:  #FFE900;
+    $color-red: #B1060F;
+    $color-green: #06b13f;
+
+
+/*******
+* Other Variables
+******/
+
+$common-transition: 0.5s;
+$common-shadow: 3px 3px 3px #000;

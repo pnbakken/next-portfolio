@@ -1,0 +1,42 @@
+.skills-container {
+    width: 80%;
+    max-width: 800px!important;
+    gap: 1em!important;
+    @media(max-width: 1024px) {
+        width: 70%;
+    }
+    @media(max-width: 768px) {
+        width: 85%;
+    }
+    @media(max-width: 500px) {
+        width: 95%;
+    }
+}
+
+.skill-item {
+    justify-content: flex-end;
+    padding: 1rem;
+    gap: 10px;
+    width: 120px;
+    height: 134px;
+    box-shadow: $common-shadow;
+
+    .skill-icon {
+        width: 60px;
+        
+    }
+    
+    @media(max-width: 500px) {
+        .skill-name {
+            display: none;
+        }
+        .skill-icon {
+            width: 55px;
+            
+        }
+
+        height: 80px;
+        width: 60px;
+        padding: 0.5rem;
+    }
+}
