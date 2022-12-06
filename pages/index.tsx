@@ -18,18 +18,18 @@ const Home: NextPage = () => {
     <title>Pål N. Bakken | Portfolio</title>
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/favicon/apple-touch-icon.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon/favicon-32x32.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon/favicon-16x16.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/favicon/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon/favicon-16x16.png"/>
 
-    <link rel="manifest" href="/assets/icon/favicon/site.webmanifest"/>
-    <link rel="mask-icon" href="/assets/icon/favicon/safari-pinned-tab.svg" color="#5bbad5"/>
+    <link rel="manifest" href="/icon/favicon/site.webmanifest"/>
+    <link rel="mask-icon" href="/icon/favicon/safari-pinned-tab.svg" color="#5bbad5"/>
     <meta name="msapplication-TileColor" content="#da532c"/>
 
     
-    <link rel="shortcut icon" href="assets/icon/favicon/favicon.ico"/>
+    <link rel="shortcut icon" href="/icon/favicon/favicon.ico"/>
     
-    <meta name="msapplication-config" content="assets/icon/favicon/browserconfig.xml"/>
+    <meta name="msapplication-config" content="/icon/favicon/browserconfig.xml"/>
 
     <meta name="theme-color" content="#ffffff"/>
     
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300&display=swap" rel="stylesheet"/>
 
-    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    {/* <link rel="stylesheet" href="./css/style.css" type="text/css" /> */}
 
    
 
