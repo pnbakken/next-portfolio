@@ -28,7 +28,7 @@ const OriginalMain = () => {
                         </div>
                         
                     </div> 
-                    <div className="service-icon"><img src="./assets/icon/services/icon-computer.svg" alt="websites and applications"/></div>
+                    <div className="service-icon"><img src="/icon/services/icon-computer.svg" alt="websites and applications"/></div>
                     
                 </div>
 
@@ -53,7 +53,7 @@ const OriginalMain = () => {
                         </div>
                         
                     </div>
-                    <div className="service-icon"><img src="./assets/icon/services/icon-photo.svg" alt="photography"/></div>
+                    <div className="service-icon"><img src="/icon/services/icon-photo.svg" alt="photography"/></div>
                 </div>
 
                 <div className=" container-item service-item" id="online-consulting">
@@ -75,7 +75,7 @@ const OriginalMain = () => {
 
                         </div>
                     </div>
-                    <div className="service-icon"><img src="./assets/icon/services/icon-online.svg" alt="online consulting"/></div>
+                    <div className="service-icon"><img src="/icon/services/icon-online.svg" alt="online consulting"/></div>
                 </div>
                
                 <div className=" container-item service-item" id="authoring">
@@ -97,7 +97,7 @@ const OriginalMain = () => {
                         </div>
                         
                     </div>
-                    <div className="service-icon"><img src="./assets/icon/services/icon-copy.svg" alt="content authoring"/> </div>
+                    <div className="service-icon"><img src="/icon/services/icon-copy.svg" alt="content authoring"/> </div>
                 </div>
 
             </div>
@@ -147,16 +147,16 @@ const OriginalMain = () => {
                    
                     <ul className="social-links">
                         <li>
-                            <a className="social-link" href="https://github.com/pnbakken"><img className="social-icon" src="./assets/icon/social/awesome-github.svg" alt="github"/> <span className="icon-text">GitHub</span></a>
+                            <a className="social-link" href="https://github.com/pnbakken"><img className="social-icon" src="/icon/social/awesome-github.svg" alt="github"/> <span className="icon-text">GitHub</span></a>
                         </li>
                         <li>
-                            <a className="social-link" href="https://www.linkedin.com/in/p%C3%A5l-bakken-0b2295204/"><img className="social-icon" src="./assets/icon/social/awesome-linkedin-in.svg" alt="linkedin"/><span className="icon-text">LinkedIn</span></a>
+                            <a className="social-link" href="https://www.linkedin.com/in/p%C3%A5l-bakken-0b2295204/"><img className="social-icon" src="/icon/social/awesome-linkedin-in.svg" alt="linkedin"/><span className="icon-text">LinkedIn</span></a>
                         </li>
                         <li>
-                            <a className="social-link" href="https://www.instagram.com/pnbakken/"><img className="social-icon" src="./assets/icon/social/awesome-instagram.svg" alt="linkedin" /> <span className="icon-text">Instagram</span></a>
+                            <a className="social-link" href="https://www.instagram.com/pnbakken/"><img className="social-icon" src="/icon/social/awesome-instagram.svg" alt="linkedin" /> <span className="icon-text">Instagram</span></a>
                         </li>
                         <li>
-                            <a className="social-link" href="mailto:contact@pnbakken.no"><img className="social-icon" src="./assets/icon/social/icon-email.svg" /> <span className="icon-text">contact@pnbakken.no</span> </a>
+                            <a className="social-link" href="mailto:contact@pnbakken.no"><img className="social-icon" src="/icon/social/icon-email.svg" /> <span className="icon-text">contact@pnbakken.no</span> </a>
                         </li>
                     </ul>
                 </div>

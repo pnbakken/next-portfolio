@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import HeaderBanner from '../components/header-banner'
+import OriginalFooter from '../components/original-footer'
 import OriginalMain from '../components/original-main'
 
 const Home: NextPage = () => {
@@ -46,6 +47,7 @@ const Home: NextPage = () => {
 
       <HeaderBanner />
       <OriginalMain />
+      <OriginalFooter />
 
           </div>
   )
