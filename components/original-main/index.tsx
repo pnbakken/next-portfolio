@@ -1,6 +1,7 @@
+import Projects from "../projects";
 
 
-const OriginalMain = () => {
+const OriginalMain = ({lang = "eng"}) => {
     return (
         <main>
         <div className="divider large-divider"></div>
@@ -109,7 +110,7 @@ const OriginalMain = () => {
 
             <h2 className="has-text" data-textname="projectsHeading">Projects</h2>
             
-            <div className="container projects-container"></div>
+            <Projects lang={lang}/>
 
         </section> 
 
