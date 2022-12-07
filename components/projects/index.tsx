@@ -36,7 +36,7 @@ const Project = ({project, lang}) => {
         
         <div className="skill-list"></div>
         <div className="project-links">
-            <a href="${project.github_url}"> <img src="/icon/technology/icon-github-light.svg" alt={`${languages[lang].githubLink}`} /></a> <a href="${project.project_url}">{languages[lang].visit}</a>
+            <a href={`${project.github_url}`}> <img src="/icon/technology/icon-github-light.svg" alt={`${languages[lang].githubLink}`} /></a> <a href={`${project.project_url}`}>{languages[lang].visit}</a>
         </div>
     </div>                    
 
