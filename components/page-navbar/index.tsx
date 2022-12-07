@@ -10,7 +10,7 @@ const PageNavbar = () => {
         <div className="navbar-brand">
           <NavLink
             href="/#header-banner"
-            className=" nav-link brand-link active"
+            className="nav-link brand-link active"
           >
             Pål N. Bakken
           </NavLink>

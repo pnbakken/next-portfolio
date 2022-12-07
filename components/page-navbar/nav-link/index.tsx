@@ -10,10 +10,8 @@ function NavLink({ href, exact = false, children, id = "", ...rest }) {
   const active = isActive() ? "active" : "";
 
   return (
-    <Link href={href}>
-      <a className={`nav-link ${active}`} id={id} {...rest}>
-        {children}
-      </a>
+    <Link href={href} className={`nav-link ${active}`} id={id} {...rest}>
+      {children}
     </Link>
   );
 }
