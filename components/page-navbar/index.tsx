@@ -6,30 +6,53 @@ import NavLink from "./nav-link";
 const PageNavbar = () => {
   return (
     <>
-      <Navbar expand="lg" className="custom-nav">
-        <div className="navbar-brand">
-          <NavLink
-            href="/#header-banner"
-            className="nav-link brand-link active"
-          >
-            Pål N. Bakken
-          </NavLink>
-        </div>
-        <Navbar.Toggle
-          aria-controls="nav-menu"
-          aria-label="Toggle navigation"
-        />
-        <Navbar.Collapse id="nav-menu">
-          <Nav>
+      <Navbar expand="lg" className="custom-nav navbar-dark">
+        <div className="container-fluid">
+          <div className="navbar-brand">
             <NavLink
-              className="nav-item nav-link has-text"
-              data-textname="navServices"
-              href="/#services"
+              href="/#header-banner"
+              className="nav-link brand-link active"
             >
-              Services
+              Pål N. Bakken
             </NavLink>
-          </Nav>
-        </Navbar.Collapse>
+          </div>
+          <Navbar.Toggle
+            aria-controls="nav-menu"
+            aria-label="Toggle navigation"
+          />
+          <Navbar.Collapse id="nav-menu">
+            <Nav className="navbar-nav me-auto mb-2 mb-lg-0">
+              <NavLink
+                className="nav-item nav-link has-text"
+                data-textname="navServices"
+                href="#services"
+              >
+                Services
+              </NavLink>
+              <NavLink
+                className="nav-item nav-link has-text"
+                data-textname="navWork"
+                href="#projects"
+              >
+                Work
+              </NavLink>
+              <NavLink
+                className="nav-item nav-link has-text"
+                data-textname="navContact"
+                href="#contact"
+              >
+                Contact
+              </NavLink>
+              <NavLink
+                href="#about"
+                className="nav-link has-text"
+                data-textname="navAbout"
+              >
+                About me
+              </NavLink>
+            </Nav>
+          </Navbar.Collapse>
+        </div>
       </Navbar>
 
       <Navbar className="navbar navbar-expand-lg navbar-dark custom-nav">

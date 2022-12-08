@@ -1,5 +1,5 @@
 {
-  "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js": { "integrity": "sha512-10ZawdsJ3GUpAf61agiiH1G7i7vri2vC8JszNQN6vLaNASzFPBX1tWQ1fP3VKzkzNlr62pAL1//h27OekhtUAg==", "contentType": "text/javascript; charset=UTF-8" },
-  "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js": { "integrity": "sha512-G0OjXiUoNHmlA53WzquhTiSSZGN8tBImOZ7V501HVxq6wGHRL/x6W+KblLh1ric3sSfSXhXn3IWWquZYjyCsaw==", "contentType": "text/javascript; charset=UTF-8" },
+  "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js": { "integrity": "sha512-vjUHE1ARngqQSOr5n20LZpyZERl6VbdLkPv00z41yO9cPOA6mxfQnVL+F3BCsXfyKqzpB2Nq2Hzd9ZnXpctFQw==", "contentType": "text/javascript; charset=UTF-8" },
+  "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js": { "integrity": "sha512-CBwl2SAmFERPCmH/q0v7J/9t08ZMLXUd/7WedTzTmc9/t569c3mal5puMhtoSl2dYH5z4yjXNAEig5/83JkV9A==", "contentType": "text/javascript; charset=UTF-8" },
   "version": 1
 }
