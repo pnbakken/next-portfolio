@@ -1,9 +1,8 @@
 import { $, $all } from "../../../tools/helpers/domSelector.js";
 
-export default function activeNavbar() {
-  const sections = $all("section, #header-banner");
-
+export default function activeNavbar(window) {
   if (typeof window === "document") {
+    const sections = $all("section, #header-banner");
     window.onscroll = () => {
       let current = "";
 

@@ -1,19 +1,19 @@
 import { $, $all } from "../../../tools/helpers/domSelector.js";
 
-export default function fixedNavOnScroll() {
-  closeOnClick();
-
-  if (typeof window === "document") {
-    window.addEventListener("scroll", () => {
-      if (scrollY > 0) {
-        $("nav").classList.add("scrolling-nav");
-      } else $("nav").classList.remove("scrolling-nav");
-    });
-  }
+export default function fixedNavOnScroll(window) {
+  closeOnClick(window);
+  window.addEventListener("scroll", () => {
+    window.console.log("Added eventlistener");
+    if (scrollY > 0) {
+      window.console.log("scrolling");
+      window.console.log($);
+      $("nav").classList.add("scrolling-nav");
+    } else $("nav").classList.remove("scrolling-nav");
+  });
 }
 
-function closeOnClick() {
-  if ($("body")) {
+export function closeOnClick() {
+  if (typeof window === "document" && $("body")) {
     $("body").onClick = () => {
       $(".navbar-collapse").classList.remove("show");
     };
@@ -22,6 +22,6 @@ function closeOnClick() {
         $(".navbar-toggler").click();
       })
     );
-    console.log(links);
+    window.console.log(links);
   }
 }

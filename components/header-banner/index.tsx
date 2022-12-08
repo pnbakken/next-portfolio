@@ -3,9 +3,6 @@ import activeNavbar from "../utility-components/active-navbar";
 import fixedNavOnScroll from "../utility-components/fixed-nav-on-scroll";
 
 function HeaderBanner() {
-  activeNavbar();
-  fixedNavOnScroll();
-
   return (
     <header id="header-banner">
       <PageNavbar />
