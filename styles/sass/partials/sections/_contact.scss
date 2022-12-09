@@ -1,0 +1,99 @@
+.contact-group {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    align-items: space-evenly;
+    justify-content: space-evenly;
+    @media(max-width: 768px) {
+        width: 90%;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 50px;
+    }
+
+    #contact-form {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        @media(max-width: 768px) {
+            
+                width: 100%;
+        
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            
+            button {
+                align-self: center;
+            }
+        }
+
+        input,textarea {
+            background: $color-abyss-gray;
+            border: 2px solid $color-abyss-blue;
+            color: $color-white;
+            box-shadow: $common-shadow;
+        }
+        textarea {
+            height:150px;
+        }
+        button {
+            width : 100%;
+            background: $color-medium-blue;
+        }
+    }
+
+    .contact-social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        
+        .social-links {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 100px;
+            box-shadow: $common-shadow;
+            padding: 2em;
+            li {
+                display: flex;
+                align-items: flex-end;
+            }
+            @media(max-width: 768px) {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-end;
+                padding-left: 0!important;
+                gap: 30px;
+                margin-top: 0;
+            }
+            a {
+                display: flex;
+                gap: 10px;
+                color: $color-white;
+                align-items: center;
+                img {
+                    width: 30px;
+                }
+
+                @media(max-width: 768px) {
+                    .icon-text {
+                        display: none;
+                    }
+                    img {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    
+}

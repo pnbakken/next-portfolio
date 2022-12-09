@@ -2,6 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+};
 
-module.exports = nextConfig
+module.exports = {
+  experimental: {
+    urlImports: [
+      "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js",
+      "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js",
+    ],
+  },
+};
