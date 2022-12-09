@@ -1,27 +1,26 @@
 import PageNavbar from "../page-navbar";
-import activeNavbar from "../utility-components/active-navbar";
-import fixedNavOnScroll from "../utility-components/fixed-nav-on-scroll";
+import { languages } from "../../tools/languages/languages";
 
-function HeaderBanner() {
+function HeaderBanner({ lang = "eng" }) {
   return (
     <header id="header-banner">
-      <PageNavbar />
+      <PageNavbar lang={lang} />
       <div className="banner-content">
-        <h1 className="banner-headline has-text" data-textname="pageHeading">
-          Hi! I&apos;m a student <span className="blue-text">front-end</span>{" "}
-          developer!
-        </h1>
+        <h1
+          className="banner-headline has-text"
+          data-textname="pageHeading"
+          dangerouslySetInnerHTML={{ __html: languages[lang].pageHeading }}
+        ></h1>
         <div className="banner-text">
           <p className="has-text" data-textname="bannerText">
-            I enjoy making good looking, responsive websites that are backed by
-            solid code.
+            {languages[lang].bannerText}
           </p>
           <a
             className="pseudo-button has-text"
             data-textname="bannerCTA"
             href="#contact"
           >
-            Get in touch
+            {languages[lang].bannerCTA}
           </a>
         </div>
       </div>

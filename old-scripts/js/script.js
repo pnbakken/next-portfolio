@@ -14,8 +14,8 @@ import fixedNavOnScroll from "./modules/display/display-utils/fixedNavOnScroll.j
 import activeNavbar from "./modules/display/display-utils/activeNavbar.js";
 import contactForm from "./modules/tools/form/contact.js";
 
-fixedNavOnScroll();
-activeNavbar();
+// fixedNavOnScroll();
+// activeNavbar();
 
 (function init() {
   let lang = "eng";

@@ -1,185 +1,130 @@
-import { useEffect } from "react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
+import useWindowSize from "../../hooks/use-window-size";
+import { $, $all, $id } from "../../tools/helpers/domSelector";
+import { languages } from "../../tools/languages/languages";
 import NavLink from "./nav-link";
-import activeNavbar from "../utility-components/active-navbar";
-import { $ } from "../../tools/helpers/domSelector";
 
-const PageNavbar = (): JSX.Element => {
+const PageNavbar = ({ lang }): JSX.Element => {
+  const [scrolling, setScrolling] = useState(false);
+
   useEffect(() => {
     if (window) {
-      window.console.log(window);
+      window.console.log("Has window");
+
       window.addEventListener("scroll", () => {
-        console.log("scrolling");
-        if (window.scrollY > 0) {
-          if ($("nav")) {
-            window.console.log($("nav"));
-          }
+        if (scrollY > 0) {
+          setScrolling(true);
+        } else {
+          setScrolling(false);
         }
       });
+
+      return window.removeEventListener("scroll", () => {});
     }
   }, []);
 
-  return (
-    <>
-      <Navbar expand="lg" className="custom-nav navbar-dark">
-        <div className="container-fluid">
-          <div className="navbar-brand">
-            <NavLink
-              href="/#header-banner"
-              className="nav-link brand-link active"
-            >
-              Pål N. Bakken
-            </NavLink>
-          </div>
-          <Navbar.Toggle
-            aria-controls="nav-menu"
-            aria-label="Toggle navigation"
-          />
-          <Navbar.Collapse id="nav-menu">
-            <Nav className="navbar-nav me-auto mb-2 mb-lg-0">
-              <NavLink
-                className="nav-item nav-link has-text"
-                data-textname="navServices"
-                href="#services"
-              >
-                Services
-              </NavLink>
-              <NavLink
-                className="nav-item nav-link has-text"
-                data-textname="navWork"
-                href="#projects"
-              >
-                Work
-              </NavLink>
-              <NavLink
-                className="nav-item nav-link has-text"
-                data-textname="navContact"
-                href="#contact"
-              >
-                Contact
-              </NavLink>
-              <NavLink
-                href="#about"
-                className="nav-link has-text"
-                data-textname="navAbout"
-              >
-                About me
-              </NavLink>
-            </Nav>
-            <div className="language-select">
-              <div>
-                <a href="./?lang=eng">
-                  <img
-                    src="/icon/language/icons8-great-britain-48.png"
-                    alt="English"
-                  />
-                </a>{" "}
-                <a href="./?lang=nob">
-                  <img src="/icon/language/icons8-norway-48.png" alt="Norsk" />
-                </a>
-              </div>
-              <button
-                className="discrete-button has-text"
-                id="clear-language"
-                value="Clear language selection"
-                style={{ display: "none" }}
-                data-textname="removeStoredLanguage"
-              >
-                Clear language selection
-              </button>
-            </div>
-          </Navbar.Collapse>
-        </div>
-      </Navbar>
+  const windowSize = useWindowSize();
 
-      <Navbar className="navbar navbar-expand-lg navbar-dark custom-nav">
-        <div className="container-fluid">
-          <div className="navbar-brand">
-            <a href="#header-banner" className="nav-link brand-link active">
-              Pål N. Bakken
-            </a>
-          </div>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+  useEffect(() => {
+    if (window && windowSize.innerWidth && windowSize.innerWidth <= 991) {
+      const navLinks = $all(".nav-link");
+      const toggler = $id("nav-toggler");
+      if (toggler && toggler.click) {
+        if (navLinks) {
+          navLinks.forEach((navL) => {
+            navL.addEventListener("click", () => toggler.click());
+            console.log("add close navbar");
+          });
+
+          return navLinks.forEach((navL) =>
+            navL.removeEventListener("click", () => {})
+          );
+        }
+      }
+    }
+  });
+
+  return (
+    <Navbar
+      expand="lg"
+      className={`custom-nav navbar-dark ${scrolling && "scrolling-nav"}`}
+    >
+      <div className="container-fluid">
+        <div className="navbar-brand">
+          <NavLink
+            href="#header-banner"
+            className="nav-link brand-link"
+            active={true}
+            id="nav-logo-link"
           >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <Navbar.Collapse
-            className="collapse navbar-collapse"
-            id="navbarSupportedContent"
-          >
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a
-                  href="#services"
-                  className="nav-link has-text"
-                  data-textname="navServices"
-                >
-                  Services
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  href="#projects"
-                  className="nav-link has-text"
-                  data-textname="navWork"
-                >
-                  Work
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  href="#contact"
-                  className="nav-link has-text"
-                  data-textname="navContact"
-                >
-                  Contact
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  href="#about"
-                  className="nav-link has-text"
-                  data-textname="navAbout"
-                >
-                  About me
-                </a>
-              </li>
-            </ul>
-            <div className="language-select">
-              <div>
-                <a href="./?lang=eng">
-                  <img
-                    src="/icon/language/icons8-great-britain-48.png"
-                    alt="English"
-                  />
-                </a>{" "}
-                <a href="./?lang=nob">
-                  <img src="/icon/language/icons8-norway-48.png" alt="Norsk" />
-                </a>
-              </div>
-              <button
-                className="discrete-button has-text"
-                id="clear-language"
-                value="Clear language selection"
-                style={{ display: "none" }}
-                data-textname="removeStoredLanguage"
-              >
-                Clear language selection
-              </button>
-            </div>
-          </Navbar.Collapse>
+            Pål N. Bakken
+          </NavLink>
         </div>
-      </Navbar>
-    </>
+        <Navbar.Toggle
+          aria-controls="nav-menu"
+          aria-label="Toggle navigation"
+          className="light-toggler"
+          id="nav-toggler"
+        />
+        <Navbar.Collapse id="nav-menu">
+          <Nav className="navbar-nav me-auto mb-2 mb-lg-0">
+            <NavLink
+              className="nav-item nav-link has-text"
+              data-textname="navServices"
+              href="#services"
+            >
+              {languages[lang].navServices}
+            </NavLink>
+            <NavLink
+              className="nav-item nav-link has-text"
+              data-textname="navWork"
+              href="#projects"
+            >
+              {languages[lang].navWork}
+            </NavLink>
+            <NavLink
+              className="nav-item nav-link has-text"
+              data-textname="navContact"
+              href="#contact"
+            >
+              {languages[lang].navContact}
+            </NavLink>
+            <NavLink
+              href="#about"
+              className="nav-item nav-link has-text"
+              data-textname="navAbout"
+            >
+              {languages[lang].navAbout}
+            </NavLink>
+          </Nav>
+          <div className="language-select">
+            <div>
+              <Link href={{ pathname: "/", query: { lang: "eng" } }}>
+                <img
+                  src="/icon/language/icons8-great-britain-48.png"
+                  alt="English"
+                />
+              </Link>{" "}
+              <Link href={{ pathname: "/", query: { lang: "nob" } }}>
+                <img src="/icon/language/icons8-norway-48.png" alt="Norsk" />
+              </Link>
+            </div>
+            <button
+              className="discrete-button has-text"
+              id="clear-language"
+              value="Clear language selection"
+              style={{ display: "none" }}
+              data-textname="removeStoredLanguage"
+            >
+              {languages[lang].removeStoredLanguage}
+            </button>
+          </div>
+        </Navbar.Collapse>
+      </div>
+    </Navbar>
   );
 };
 

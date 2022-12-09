@@ -50,7 +50,7 @@ export const languages = {
 
         // Services section
         servicesHeading: `Services`,
-        websitesServiceHeading: `Nettsider og applikasjoner`,
+        websitesServiceHeading: `Websites and applications`,
         websitesTextList: `<li>
                                 I use HTML, CSS, JavaScript, and other frameworks to build websites from the ground up.
                             </li>

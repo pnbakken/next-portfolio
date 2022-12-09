@@ -76,7 +76,7 @@ const ContactForm = ({ lang }) => {
         className="has-text"
         data-textname="contactFormHeading"
       >
-        Send me a message
+        {languages[lang].contactFormHeading}
       </h3>
       <fieldset disabled={loading}>
         <div className="mb-3">
@@ -85,7 +85,7 @@ const ContactForm = ({ lang }) => {
             className="form-label has-text"
             data-textname="contactEmail"
           >
-            Email address (required)
+            {languages[lang].contactEmail}
           </label>
           <input
             type="email"
@@ -100,7 +100,7 @@ const ContactForm = ({ lang }) => {
             className="form-label has-text"
             data-textname="contactName"
           >
-            Your name (required)
+            {languages[lang].contactName}
           </label>
           <input
             type="text"
@@ -115,7 +115,7 @@ const ContactForm = ({ lang }) => {
             className="form-label has-text"
             data-textname="contactSubject"
           >
-            Message subject (required)
+            {languages[lang].contactSubject}
           </label>
           <input
             type="text"
@@ -130,7 +130,7 @@ const ContactForm = ({ lang }) => {
             className="form-label has-text"
             data-textname="messageText"
           >
-            Your message (required)
+            {languages[lang].messageText}
           </label>
           <textarea
             className="form-control"

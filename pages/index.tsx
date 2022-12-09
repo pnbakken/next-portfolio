@@ -1,11 +1,32 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import HeaderBanner from "../components/header-banner";
 import OriginalFooter from "../components/original-footer";
 import OriginalMain from "../components/original-main";
 
-const Home: NextPage = () => {
+type HomeProps = {
+  props: {
+    lang: string | null;
+  };
+};
+
+const Home: NextPage = (props) => {
+  const [lang, setLang] = useState("eng");
+  const router = useRouter();
+  useEffect(() => {
+    if (router && router.query) {
+      const { lang } = router.query;
+      if (lang) {
+        console.log(lang);
+        setLang(lang.toString());
+      }
+      console.log(router.query);
+    }
+  }, []);
+
   return (
     <div>
       <Head>
@@ -58,22 +79,25 @@ const Home: NextPage = () => {
 
         <meta name="theme-color" content="#ffffff" />
 
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-          crossOrigin="anonymous"
-        />
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
         {/* <link rel="stylesheet" href="./css/style.css" type="text/css" /> */}
       </Head>
 
-      <HeaderBanner />
-      <OriginalMain />
-      <OriginalFooter />
+      <HeaderBanner lang={lang ? lang : ""} />
+      <OriginalMain lang={lang ? lang : ""} />
+      <OriginalFooter lang={lang ? lang : ""} />
     </div>
   );
 };
 
 export default Home;
+
+export async function getServerSideProps(context): Promise<HomeProps> {
+  if (context.params && context.params.lang) {
+    const lang = context.params.lang;
+    return {
+      props: {
+        lang: lang,
+      },
+    };
+  } else return { props: { lang: null } };
+}
