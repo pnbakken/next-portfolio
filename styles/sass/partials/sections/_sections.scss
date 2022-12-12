@@ -4,12 +4,13 @@
 @import "./about";
 @import "./services";
 
-section,article {
+section,
+article {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 95%;
-    padding-top: 100px;
+    padding-top: 160px;
 }
 
 .container {
@@ -18,7 +19,7 @@ section,article {
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    
+
 
     .container-item {
         display: flex;
