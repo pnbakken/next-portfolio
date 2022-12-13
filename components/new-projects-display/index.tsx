@@ -39,7 +39,7 @@ function Tabs({ data, handleSelected }) {
 
 function Tab({ item, assignedStyle, action }) {
   return (
-    <div
+    <button
       className={`${styles.tab}`}
       style={assignedStyle}
       onClick={() => action(item)}
@@ -47,15 +47,15 @@ function Tab({ item, assignedStyle, action }) {
       <div className={`${styles.skew}`}>
         <span className={`${styles.tabText}`}>{item.name}</span>
       </div>
-    </div>
+    </button>
   );
 }
 
 function Project({ project }) {
   function ProjectContent() {
-    return <div className={`${styles.projectContent}`}></div>;
+    return <div className={`${styles.projectContent}`}>{project.name}</div>;
   }
-  useEffect(() => {});
+  useEffect(() => {}, [project]);
   return (
     <div className={`${styles.project}`}>{project && <ProjectContent />}</div>
   );
