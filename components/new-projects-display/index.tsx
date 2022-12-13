@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { projects } from "../../pages/api/work";
+import styles from "./index.style.module.scss";
 
 const NewProjectsDisplay = ({ lang }) => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(projects[0]);
   return (
     <div className="new-projects-display full-width">
-      <div className={"projects full-width"}>
+      <div className={"projects flex-c gap-xs full-width"}>
         <Tabs data={projects} handleSelected={setSelectedProject} />
+        <Project project={selectedProject} />
       </div>
     </div>
   );
@@ -15,9 +17,46 @@ const NewProjectsDisplay = ({ lang }) => {
 export default NewProjectsDisplay;
 
 function Tabs({ data, handleSelected }) {
-  return <div className="tabs"></div>;
+  return (
+    <div
+      className={`${styles.tabs} full-width flex-r justify-center gap-md wrap`}
+    >
+      {data &&
+        data.map((item, index) => {
+          const tabStyle = {};
+          return (
+            <Tab
+              item={item}
+              key={item.name}
+              assignedStyle={tabStyle}
+              action={handleSelected}
+            />
+          );
+        })}
+    </div>
+  );
 }
 
-function Project({ data }) {
-  return <div className="project"></div>;
+function Tab({ item, assignedStyle, action }) {
+  return (
+    <div
+      className={`${styles.tab}`}
+      style={assignedStyle}
+      onClick={() => action(item)}
+    >
+      <div className={`${styles.skew}`}>
+        <span className={`${styles.tabText}`}>{item.name}</span>
+      </div>
+    </div>
+  );
+}
+
+function Project({ project }) {
+  function ProjectContent() {
+    return <div className={`${styles.projectContent}`}></div>;
+  }
+  useEffect(() => {});
+  return (
+    <div className={`${styles.project}`}>{project && <ProjectContent />}</div>
+  );
 }

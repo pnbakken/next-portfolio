@@ -60,7 +60,7 @@ export const projects = [
 
     {
         id: 4,
-        name: "Community Science Museum",
+        name: "CSM",
         description_eng:
             "First major course work submisson. HTML and CSS only website for an imagined science museum.",
         description_nob: "",

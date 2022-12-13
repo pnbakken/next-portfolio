@@ -17,7 +17,7 @@ const Home: NextPage = (props) => {
   const [lang, setLang] = useState("eng");
   const router = useRouter();
   useEffect(() => {
-    if (router && router.query) {
+    if (router.query) {
       const { lang } = router.query;
       if (lang) {
         console.log(lang);
@@ -25,7 +25,7 @@ const Home: NextPage = (props) => {
       }
       console.log(router.query);
     }
-  }, []);
+  }, [router.query]);
 
   return (
     <div>
