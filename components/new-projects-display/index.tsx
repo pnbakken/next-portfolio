@@ -5,10 +5,14 @@ import styles from "./index.style.module.scss";
 const NewProjectsDisplay = ({ lang }) => {
   const [selectedProject, setSelectedProject] = useState(projects[0]);
   return (
-    <div className="new-projects-display full-width">
-      <div className={"projects flex-c gap-xs full-width"}>
-        <Tabs data={projects} handleSelected={setSelectedProject} />
-        <Project project={selectedProject} />
+    <div className={`${styles.newProjectsDisplay} full-width`}>
+      <div className={`${styles.projects} flex-c gap-xs full-width`}>
+        <Tabs
+          data={projects}
+          handleSelected={setSelectedProject}
+          selectedProject={selectedProject}
+        />
+        <Project project={selectedProject} lang={lang} />
       </div>
     </div>
   );
@@ -16,13 +20,11 @@ const NewProjectsDisplay = ({ lang }) => {
 
 export default NewProjectsDisplay;
 
-function Tabs({ data, handleSelected }) {
+function Tabs({ data, handleSelected, selectedProject }) {
   return (
-    <div
-      className={`${styles.tabs} full-width flex-r justify-center gap-md wrap`}
-    >
+    <div className={`${styles.tabs} full-width flex-r justify-center wrap`}>
       {data &&
-        data.map((item, index) => {
+        data.map((item) => {
           const tabStyle = {};
           return (
             <Tab
@@ -30,6 +32,7 @@ function Tabs({ data, handleSelected }) {
               key={item.name}
               assignedStyle={tabStyle}
               action={handleSelected}
+              selection={selectedProject}
             />
           );
         })}
@@ -37,21 +40,26 @@ function Tabs({ data, handleSelected }) {
   );
 }
 
-function Tab({ item, assignedStyle, action }) {
+function Tab({ item, assignedStyle, action, selection }) {
+  const [isSelected, setIsSelected] = useState(false);
+  useEffect(() => {
+    selection.name === item.name ? setIsSelected(true) : setIsSelected(false);
+  }, [selection.name, item.name]);
+
   return (
     <button
-      className={`${styles.tab}`}
+      className={`${styles.tab} ${isSelected && styles.selected} discrete`}
       style={assignedStyle}
       onClick={() => action(item)}
     >
-      <div className={`${styles.skew}`}>
+      <div>
         <span className={`${styles.tabText}`}>{item.name}</span>
       </div>
     </button>
   );
 }
 
-function Project({ project }) {
+function Project({ project, lang }) {
   function ProjectContent() {
     return <div className={`${styles.projectContent}`}>{project.name}</div>;
   }

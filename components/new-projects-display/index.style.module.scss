@@ -1,21 +1,82 @@
-.tabs {
+.newProjectsDisplay {
+    background: grey;
+    padding: 20px;
     overflow: hidden;
+    margin: 80px 0;
+
+    .projects {
+        background: rgb(71, 71, 71);
+        padding: 20px;
+
+        .tabs {
 
 
-    .tab {
-        background: #4d4d4d;
+            .tab {
+                height: fit-content;
+                background: #534447;
+                transition: 0.5s;
+                padding: 0.75em 1em;
+                border: 1px solid black;
+
+            }
+
+            @media (min-width: 768px) {
 
 
 
-        .skew {
+                .tab {}
+
+                .tab:nth-child(1) {
+                    border-radius: 0.25rem 0 0 0.25rem;
+                }
+
+                .tab:last-child {
+                    border-radius: 0 0.25rem 0.25rem 0;
+                }
+
+                .tab.selected {
+                    transform: scale(1.1);
+                    z-index: 2;
+                    border-radius: 0.25rem;
+
+                    .tabText {
+                        transform: scale(0.9);
+
+                    }
+                }
 
 
-            .tabText {}
+            }
+
+            @media (max-width: 767px) {
+                gap: 8px;
+                flex-direction: column;
+            }
+
+        }
+
+
+        .tab.selected {
+            background: #cbbdc0;
+
+
+
+        }
+
+        .project {
+
+            border: 1px solid pink;
+            overflow: hidden;
+            height: 400px;
+            padding: 20px;
+        }
+
+        .project:last-child {
+            margin-right: 0;
         }
     }
-}
 
-.project {
-    background: #201111;
-    min-height: 400px;
+
+
+
 }
