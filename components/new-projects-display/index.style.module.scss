@@ -1,11 +1,13 @@
+@import "/styles/sass/partials/base/variables";
+
 .newProjectsDisplay {
-    background: grey;
+
     padding: 20px;
     overflow: hidden;
     margin: 80px 0;
 
     .projects {
-        background: rgb(71, 71, 71);
+
         padding: 20px;
 
         .tabs {
@@ -13,8 +15,8 @@
 
             .tab {
                 height: fit-content;
-                background: #534447;
-                transition: 0.5s;
+                background: $color-blue-gradient;
+                transition: all 0.5s, transform 1s;
                 padding: 0.75em 1em;
                 border: 1px solid black;
 
@@ -56,12 +58,7 @@
         }
 
 
-        .tab.selected {
-            background: #cbbdc0;
-
-
-
-        }
+        .tab.selected {}
 
         .project {
 

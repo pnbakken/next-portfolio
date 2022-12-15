@@ -11,6 +11,17 @@ export const projects = [
        }, */
 
     {
+        "id": 7,
+        "name": "",
+        "description_eng": "",
+        "description_nob": "",
+        "image_url": "",
+        "project_url": "",
+        "github_url": "",
+        "skills": []
+    },
+
+    {
         id: 6,
         name: "Quizify",
         description_eng: "Simple quiz app made with React",
@@ -19,6 +30,8 @@ export const projects = [
             "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1656758146/portfolio/projects/quizify-project-shot_atoxbb.png",
         project_url: "https://pnbakken.no/quizify",
         github_url: "https://github.com/pnbakken/quizify",
+        colour_primary: "",
+        colour_text: "",
     },
 
     {
@@ -32,6 +45,8 @@ export const projects = [
             "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1655303981/portfolio/projects/in-bloom_zrgdbu.png",
         project_url: "https://flowersinbloom.netlify.app/",
         github_url: "https://github.com/pnbakken/semester-project2",
+        colour_primary: "",
+        colour_text: "",
     },
 
     {
@@ -44,6 +59,8 @@ export const projects = [
             "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1655303974/portfolio/projects/photo-journal_rcb7g9.png",
         project_url: "https://kind-northcutt-931525.netlify.app/",
         github_url: "https://github.com/pnbakken/PNB_Photo_Journal",
+        colour_primary: "",
+        colour_text: "",
     },
 
     {
@@ -56,6 +73,8 @@ export const projects = [
             "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1655376742/portfolio/projects/square-eyes_pxavdc.png",
         project_url: "https://brave-einstein-119948.netlify.app/",
         github_url: "https://github.com/pnbakken/HtmlCssCourseAssignment",
+        colour_primary: "",
+        colour_text: "",
     },
 
     {
@@ -68,6 +87,8 @@ export const projects = [
             "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1655474327/portfolio/projects/Screenshot_2022-06-17_at_15-58-12_Community_Science_Museum_Visit_Us_kmbepe.png",
         project_url: "https://friendly-dubinsky-6a9198.netlify.app/",
         github_url: "https://github.com/pnbakken/SemProj1",
+        colour_primary: "",
+        colour_text: "",
     },
 
     {
@@ -81,5 +102,7 @@ export const projects = [
         project_url: "https://codeit-group.netlify.app/",
         github_url:
             "https://github.com/pnbakken/industry-knowledge-group-assignment",
+        colour_primary: "",
+        colour_text: "",
     },
 ];
