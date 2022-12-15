@@ -1,52 +1,60 @@
 export const projects = [
     /* {
-          "id": 0,
-           "name": "",
-           "description_eng": "",
-           "description_nob": "",
-           "image_url": "",
-           "project_url": "",
-           "github_url": "",
-           "skills": []
+          id: 0,
+           name: "",
+           description_eng: "",
+           description_nob: "",
+           image_url: "",
+           project_url: "",
+           github_url: "",
+           skills: [],
+           style: {},
        }, */
 
     {
-        "id": 7,
-        "name": "",
-        "description_eng": "",
-        "description_nob": "",
-        "image_url": "",
-        "project_url": "",
-        "github_url": "",
-        "skills": []
+        id: 7,
+        name: "TTaG",
+        description_eng: "JavaScript Frameworks Course Assignment. Unstyled blog-style website, server-side rendered pages fetching data from a local API. Can toggle posts in and out of favourites, and do a perfunctory login to wordpress if running both locally. Made with NextJS.",
+        description_nob: "JavaScript Frameworks Course Assignment. Ustylet blog-aktig nettside, med server-side genererte sider som henter data fra et lokalt API. Kan legge til og fjerne poster fra favoritter, og gjøre en login til wordpress om begge apper kjøres lokalt. Lagd med NextJS.",
+        image_url: "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1671121582/portfolio/projects/Screenshot_2022-12-15_172448_tk8tya.jpg",
+        project_url: "https://dynamic-salamander-9a889d.netlify.app/",
+        github_url: "https://github.com/pnbakken/js-frameworks-public",
+        style: {
+            colour_primary: "#0b4f6c",
+            colour_text: "white",
+        }
     },
 
     {
         id: 6,
         name: "Quizify",
-        description_eng: "Simple quiz app made with React",
+        description_eng: "Simple quiz app made to take a first look at React. Has no concept of component lifecycles or states. You can play as full quiz on it, but besides that it needs a major overhaul",
         description_nob: "Enkel quiz-applikasjon lagd med React",
         image_url:
             "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1656758146/portfolio/projects/quizify-project-shot_atoxbb.png",
         project_url: "https://pnbakken.no/quizify",
         github_url: "https://github.com/pnbakken/quizify",
-        colour_primary: "",
-        colour_text: "",
+        style: {
+            colour_primary: "#753ea3",
+            colour_text: "#f7f7ff",
+        }
     },
 
     {
         id: 1,
         name: "In Bloom",
         description_eng:
-            "End of 3rd semester project. Mock-up e-commerce storefront. Uses Strapi hosted on Heroku. Contains a simulated shopping cart, as well as an authenticated admin section for creating and editing products.",
+            "End of 3rd semester project. Mock-up e-commerce storefront. Uses Strapi hosted on Heroku. Contains a simulated shopping cart, as well as an authenticated admin section for creating and editing products. For this project I also captured my own product images.",
         description_nob:
-            "Avsluttende prosjekt for 3. semester. Enkel nettbutikk-front. Bruker Strapi som kjører på Heroku. Har en autentisert admin-seksjon for å endre eller legge til produkter.",
+            "Avsluttende prosjekt for 3. semester. Enkel nettbutikk-front. Bruker Strapi som kjører på Heroku. Har en autentisert admin-seksjon for å endre eller legge til produkter. I dette prosjektet har jeg selv tatt produktfoto",
         image_url:
             "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1655303981/portfolio/projects/in-bloom_zrgdbu.png",
         project_url: "https://flowersinbloom.netlify.app/",
         github_url: "https://github.com/pnbakken/semester-project2",
-        colour_primary: "",
-        colour_text: "",
+        style: {
+            colour_primary: "#3E1929",
+            colour_text: "",
+        }
     },
 
     {
@@ -59,8 +67,10 @@ export const projects = [
             "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1655303974/portfolio/projects/photo-journal_rcb7g9.png",
         project_url: "https://kind-northcutt-931525.netlify.app/",
         github_url: "https://github.com/pnbakken/PNB_Photo_Journal",
-        colour_primary: "",
-        colour_text: "",
+        style: {
+            colour_primary: "",
+            colour_text: "",
+        }
     },
 
     {

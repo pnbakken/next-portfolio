@@ -19,6 +19,8 @@
                 transition: all 0.5s, transform 1s;
                 padding: 0.75em 1em;
                 border: 1px solid black;
+                opacity: 0.8;
+                color: $color-white;
 
             }
 
@@ -40,6 +42,7 @@
                     transform: scaleY(1.1) scaleX(1.2);
                     z-index: 1;
                     border-radius: 0.25rem;
+                    opacity: 1;
 
                     .tabText {
                         transform: scale(0.9);
@@ -62,10 +65,56 @@
 
         .project {
 
-            border: 1px solid pink;
+
             overflow: hidden;
-            height: 400px;
-            padding: 20px;
+
+            .projectContent {
+
+
+                .projectBody {
+                    @media(max-width: 991px) {
+                        flex-wrap: wrap;
+                    }
+
+                    .projectImage {
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        height: 300px;
+                        width: 45%;
+                        max-width: 400px;
+
+                        @media(max-width: 991px) {
+                            width: 100%;
+                        }
+
+                    }
+
+                    .projectInfo {
+
+                        width: 100%;
+                        max-width: 400px;
+
+                        .projectDescription {}
+
+                        .projectLinks {
+                            display: flex;
+                            width: 100%;
+                            justify-content: space-evenly;
+                            align-items: baseline;
+
+                            a {
+                                color: $color-white;
+                                text-decoration: underline;
+                            }
+
+                            img {
+                                width: 40px;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .project:last-child {
