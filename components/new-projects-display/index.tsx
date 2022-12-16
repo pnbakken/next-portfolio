@@ -6,7 +6,7 @@ import useWindowSize from "../../hooks/use-window-size";
 import { $, $id } from "../../tools/helpers/domSelector";
 
 const NewProjectsDisplay = ({ lang }) => {
-  const displayRef = useRef(null);
+  const displayRef = useRef<HTMLElement | null>(null);
   const scrollToRef = () => {
     if (displayRef && displayRef.current) {
       displayRef.current.scrollIntoView();
