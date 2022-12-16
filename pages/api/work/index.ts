@@ -45,8 +45,8 @@ export const projects = [
     {
         id: 6,
         name: "Quizify",
-        description_eng: "Simple quiz app made to take a first look at React. Has no concept of component lifecycles or states. You can play as full quiz on it, but besides that it needs a major overhaul",
-        description_nob: "Enkel quiz-applikasjon lagd med React",
+        description_eng: "Simple quiz app made as a first look at React. Very basic, and doesn't really belong here until it gets a complete reworking, but you can play a full quiz on it",
+        description_nob: "Enkel quiz-applikasjon lagd som en første kikk på React. Meget basic, og hører egentlig ikke hjemme her før den får en totalrenovering, men den fungerer til å spille en quiz.",
         image_url:
             "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1656758146/portfolio/projects/quizify-project-shot_atoxbb.png",
         project_url: "https://pnbakken.no/quizify",

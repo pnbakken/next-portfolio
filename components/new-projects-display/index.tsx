@@ -105,7 +105,7 @@ function Project({ project, lang }) {
           <h3 className="project-name">{project.name}</h3>
         </div>
         <div
-          className={`${styles.projectBody} flex-r full-width justify-center gap-md`}
+          className={`${styles.projectBody} flex-r full-width align-center justify-center gap-md`}
         >
           <div
             className={styles.projectImage}

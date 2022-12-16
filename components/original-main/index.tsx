@@ -119,8 +119,11 @@ const OriginalMain = ({ lang = "eng" }) => {
         <h2 className="has-text" data-textname="projectsHeading">
           {languages[lang].projectsHeading}
         </h2>
-        <NewProjectsDisplay lang={lang} />
-        <Projects lang={lang} />
+        <div className="flex-c gap-xl">
+          <NewProjectsDisplay lang={lang} />
+
+          <Projects lang={lang} />
+        </div>
       </section>
 
       <div className="divider"></div>
