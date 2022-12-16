@@ -8,8 +8,25 @@ export const projects = [
            project_url: "",
            github_url: "",
            skills: [],
-           style: {},
+           style: {
+            colour_primary: "",
+            colour_text: "",
+           },
        }, */
+
+    {
+        id: 8,
+        name: "Just Post",
+        description_eng: "Project Exam 2. Front-end for the Noroff Social API",
+        description_nob: "",
+        image_url: "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1671193314/portfolio/projects/Screenshot_2022-12-16_131946_cmlssl.jpg",
+        project_url: "https://just-post-app.netlify.app",
+        github_url: "https://github.com/Noroff-FEU-Assignments/project-exam-2-pnbakken",
+        style: {
+            colour_primary: "#1b4079",
+            colour_text: "#e40066",
+        },
+    },
 
     {
         id: 7,
@@ -20,8 +37,8 @@ export const projects = [
         project_url: "https://dynamic-salamander-9a889d.netlify.app/",
         github_url: "https://github.com/pnbakken/js-frameworks-public",
         style: {
-            colour_primary: "#0b4f6c",
-            colour_text: "white",
+            colour_primary: "white",
+            colour_text: "#0b4f6c",
         }
     },
 
@@ -68,8 +85,8 @@ export const projects = [
         project_url: "https://kind-northcutt-931525.netlify.app/",
         github_url: "https://github.com/pnbakken/PNB_Photo_Journal",
         style: {
-            colour_primary: "",
-            colour_text: "",
+            colour_primary: "#e5e8ea",
+            colour_text: "#30566e",
         }
     },
 
@@ -83,8 +100,10 @@ export const projects = [
             "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1655376742/portfolio/projects/square-eyes_pxavdc.png",
         project_url: "https://brave-einstein-119948.netlify.app/",
         github_url: "https://github.com/pnbakken/HtmlCssCourseAssignment",
-        colour_primary: "",
-        colour_text: "",
+        style: {
+            colour_primary: "#18283b",
+            colour_text: "#60b1b8",
+        }
     },
 
     {
@@ -97,8 +116,10 @@ export const projects = [
             "https://res.cloudinary.com/dt8j2ptfq/image/upload/v1655474327/portfolio/projects/Screenshot_2022-06-17_at_15-58-12_Community_Science_Museum_Visit_Us_kmbepe.png",
         project_url: "https://friendly-dubinsky-6a9198.netlify.app/",
         github_url: "https://github.com/pnbakken/SemProj1",
-        colour_primary: "",
-        colour_text: "",
+        style: {
+            colour_primary: "#18529e",
+            colour_text: "#f05444",
+        }
     },
 
     {
@@ -112,7 +133,9 @@ export const projects = [
         project_url: "https://codeit-group.netlify.app/",
         github_url:
             "https://github.com/pnbakken/industry-knowledge-group-assignment",
-        colour_primary: "",
-        colour_text: "",
+        style: {
+            colour_primary: "#4baabd",
+            colour_text: "#e6e6e6",
+        }
     },
 ];

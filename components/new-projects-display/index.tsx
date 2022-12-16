@@ -1,18 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { projects } from "../../pages/api/work";
 import styles from "./index.style.module.scss";
 import { languages } from "../../tools/languages/languages";
+import useWindowSize from "../../hooks/use-window-size";
+import { $, $id } from "../../tools/helpers/domSelector";
 
 const NewProjectsDisplay = ({ lang }) => {
+  const displayRef = useRef(null);
+  const scrollToRef = () => {
+    if (
+      displayRef &&
+      displayRef.current &&
+      scrollY >= displayRef.current.offsetTop + 200
+    ) {
+      displayRef.current.scrollIntoView();
+    }
+  };
   const [selectedProject, setSelectedProject] = useState(projects[0]);
   return (
-    <div className={`${styles.newProjectsDisplay} full-width`}>
-      <div className={`${styles.projects} flex-c gap-xs full-width`}>
+    <div className={`${styles.newProjectsDisplay} full-width`} ref={displayRef}>
+      <div className={`${styles.projects} flex-c gap-md full-width`}>
         <Project project={selectedProject} lang={lang} />
         <Tabs
           data={projects}
           handleSelected={setSelectedProject}
           selectedProject={selectedProject}
+          handleScroll={scrollToRef}
         />
       </div>
     </div>
@@ -21,7 +34,7 @@ const NewProjectsDisplay = ({ lang }) => {
 
 export default NewProjectsDisplay;
 
-function Tabs({ data, handleSelected, selectedProject }) {
+function Tabs({ data, handleSelected, selectedProject, handleScroll }) {
   return (
     <div className={`${styles.tabs} full-width flex-r justify-center wrap`}>
       {data &&
@@ -34,6 +47,7 @@ function Tabs({ data, handleSelected, selectedProject }) {
               assignedStyle={tabStyle}
               action={handleSelected}
               selection={selectedProject}
+              scroll={handleScroll}
             />
           );
         })}
@@ -41,7 +55,7 @@ function Tabs({ data, handleSelected, selectedProject }) {
   );
 }
 
-function Tab({ item, assignedStyle, action, selection }) {
+function Tab({ item, assignedStyle, action, selection, scroll }) {
   const [isSelected, setIsSelected] = useState(false);
   useEffect(() => {
     selection.name === item.name ? setIsSelected(true) : setIsSelected(false);
@@ -57,11 +71,20 @@ function Tab({ item, assignedStyle, action, selection }) {
     }
   }, []);
 
+  const windowSize = useWindowSize();
+
+  function runAction(item) {
+    action(item);
+
+    console.log("scrolling");
+    scroll();
+  }
+
   return (
     <button
       className={`${styles.tab} ${isSelected && styles.selected} discrete`}
       style={tabStyle}
-      onClick={() => action(item)}
+      onClick={() => runAction(item)}
       aria-labelledby={item.name}
     >
       <div>
@@ -76,7 +99,10 @@ function Project({ project, lang }) {
     const projectImageUrl = project.image_url ? project.image_url : "";
     const langDescription = `description_${lang}`;
     return (
-      <div className={`${styles.projectContent} flex-c p-5`}>
+      <div
+        className={`${styles.projectContent} flex-c mt-5`}
+        id="project-content"
+      >
         <div
           className={`${styles.projectHeader} flex-c align-center full-width mb-5`}
         >
