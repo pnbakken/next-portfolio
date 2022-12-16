@@ -17,7 +17,7 @@
             .tab {
                 height: fit-content;
                 background: $color-blue-gradient;
-                transition: all 0.5s, transform 1s;
+                transition: transform 1s, opacity 0s;
                 padding: 0.75em 1em;
                 border: 1px solid black;
                 opacity: 0.8;
@@ -26,7 +26,7 @@
             }
 
             .tab.selected {
-                transform: scaleY(1.1) scaleX(1.2);
+                transform: scaleY(1.15) scaleX(1.25);
                 z-index: 1;
                 border-radius: 0.25rem;
                 opacity: 1;
@@ -74,6 +74,7 @@
             overflow: hidden;
 
             .projectContent {
+
 
 
                 .projectBody {

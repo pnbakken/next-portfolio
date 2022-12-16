@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { projects } from "../../pages/api/work";
 import styles from "./index.style.module.scss";
 import { languages } from "../../tools/languages/languages";
-import useWindowSize from "../../hooks/use-window-size";
-import { $, $id } from "../../tools/helpers/domSelector";
 
 const NewProjectsDisplay = ({ lang }) => {
   const displayRef = useRef<HTMLDivElement | null>(null);
@@ -12,7 +10,9 @@ const NewProjectsDisplay = ({ lang }) => {
       displayRef.current.scrollIntoView();
     }
   };
+
   const [selectedProject, setSelectedProject] = useState(projects[0]);
+
   return (
     <div className={`${styles.newProjectsDisplay} full-width`} ref={displayRef}>
       <div className={`${styles.projects} flex-c gap-md full-width`}>
@@ -67,12 +67,9 @@ function Tab({ item, assignedStyle, action, selection, scroll }) {
     }
   }, []);
 
-  const windowSize = useWindowSize();
-
   function runAction(item) {
     action(item);
 
-    console.log("scrolling");
     scroll();
   }
 
