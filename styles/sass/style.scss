@@ -1,8 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
 
 @import "./partials/base/base";
+@import "./partials/utility/utility-classes";
 @import "./partials/body/body";
 @import "./partials/design-components/design-components";
+@import "./partials/new-project-display/new-project-display";
 @import "./partials/header/header";
 @import "./partials/sections/sections";
 @import "./partials/footer/footer";

@@ -2,6 +2,8 @@ import Projects from "../projects";
 import Skills from "../skills";
 import ContactForm from "../contact-form";
 import { languages } from "../../tools/languages/languages";
+import NewProjectsDisplay from "../new-projects-display";
+import { BASE_PATH } from "../../constants/baseURL";
 
 const OriginalMain = ({ lang = "eng" }) => {
   return (
@@ -31,7 +33,7 @@ const OriginalMain = ({ lang = "eng" }) => {
             </div>
             <div className="service-icon">
               <img
-                src="/icon/services/icon-computer.svg"
+                src={`${BASE_PATH}/icon/services/icon-computer.svg`}
                 alt="websites and applications"
               />
             </div>
@@ -56,7 +58,10 @@ const OriginalMain = ({ lang = "eng" }) => {
               </div>
             </div>
             <div className="service-icon">
-              <img src="/icon/services/icon-photo.svg" alt="photography" />
+              <img
+                src={`${BASE_PATH}/icon/services/icon-photo.svg`}
+                alt="photography"
+              />
             </div>
           </div>
 
@@ -77,7 +82,7 @@ const OriginalMain = ({ lang = "eng" }) => {
             </div>
             <div className="service-icon">
               <img
-                src="/icon/services/icon-online.svg"
+                src={`${BASE_PATH}/icon/services/icon-online.svg`}
                 alt="online consulting"
               />
             </div>
@@ -99,7 +104,10 @@ const OriginalMain = ({ lang = "eng" }) => {
               </div>
             </div>
             <div className="service-icon">
-              <img src="/icon/services/icon-copy.svg" alt="content authoring" />{" "}
+              <img
+                src={`${BASE_PATH}/icon/services/icon-copy.svg`}
+                alt="content authoring"
+              />{" "}
             </div>
           </div>
         </div>
@@ -111,8 +119,11 @@ const OriginalMain = ({ lang = "eng" }) => {
         <h2 className="has-text" data-textname="projectsHeading">
           {languages[lang].projectsHeading}
         </h2>
+        <div className="flex-c gap-xl">
+          <NewProjectsDisplay lang={lang} />
 
-        <Projects lang={lang} />
+          <Projects lang={lang} />
+        </div>
       </section>
 
       <div className="divider"></div>
@@ -129,7 +140,7 @@ const OriginalMain = ({ lang = "eng" }) => {
                 <a className="social-link" href="https://github.com/pnbakken">
                   <img
                     className="social-icon"
-                    src="/icon/social/awesome-github.svg"
+                    src={`${BASE_PATH}/icon/social/awesome-github.svg`}
                     alt="github"
                   />{" "}
                   <span className="icon-text">GitHub</span>
@@ -142,7 +153,7 @@ const OriginalMain = ({ lang = "eng" }) => {
                 >
                   <img
                     className="social-icon"
-                    src="/icon/social/awesome-linkedin-in.svg"
+                    src={`${BASE_PATH}/icon/social/awesome-linkedin-in.svg`}
                     alt="linkedin"
                   />
                   <span className="icon-text">LinkedIn</span>
@@ -155,7 +166,7 @@ const OriginalMain = ({ lang = "eng" }) => {
                 >
                   <img
                     className="social-icon"
-                    src="/icon/social/awesome-instagram.svg"
+                    src={`${BASE_PATH}/icon/social/awesome-instagram.svg`}
                     alt="linkedin"
                   />{" "}
                   <span className="icon-text">Instagram</span>
@@ -165,7 +176,7 @@ const OriginalMain = ({ lang = "eng" }) => {
                 <a className="social-link" href="mailto:contact@pnbakken.no">
                   <img
                     className="social-icon"
-                    src="/icon/social/icon-email.svg"
+                    src={`${BASE_PATH}/icon/social/icon-email.svg`}
                   />{" "}
                   <span className="icon-text">contact@pnbakken.no</span>{" "}
                 </a>
@@ -183,7 +194,12 @@ const OriginalMain = ({ lang = "eng" }) => {
         </h2>
         <article className="container about-container">
           <div className="about-content">
-            <div className="bio-image"></div>
+            <div
+              className="bio-image"
+              style={{
+                backgroundImage: `url(${BASE_PATH}/image/author-image.jpg)`,
+              }}
+            ></div>
             <div
               className="bio-text has-text"
               data-textname="bioText"

@@ -3,7 +3,12 @@ import { languages } from "../../tools/languages/languages";
 
 function HeaderBanner({ lang = "eng" }) {
   return (
-    <header id="header-banner">
+    <header
+      id="header-banner"
+      style={{
+        backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH}/image/banner-image.jpg)`,
+      }}
+    >
       <PageNavbar lang={lang} />
       <div className="banner-content">
         <h1
