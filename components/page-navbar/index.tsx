@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
+import { BASE_PATH } from "../../constants/baseURL";
 import useWindowSize from "../../hooks/use-window-size";
 import { $, $all, $id } from "../../tools/helpers/domSelector";
 import { languages } from "../../tools/languages/languages";
@@ -104,12 +105,15 @@ const PageNavbar = ({ lang }): JSX.Element => {
             <div>
               <Link href={{ pathname: "/", query: { lang: "eng" } }}>
                 <img
-                  src="/icon/language/icons8-great-britain-48.png"
+                  src={`${BASE_PATH}/icon/language/icons8-great-britain-48.png`}
                   alt="English"
                 />
               </Link>{" "}
               <Link href={{ pathname: "/", query: { lang: "nob" } }}>
-                <img src="/icon/language/icons8-norway-48.png" alt="Norsk" />
+                <img
+                  src={`${BASE_PATH}/icon/language/icons8-norway-48.png`}
+                  alt="Norsk"
+                />
               </Link>
             </div>
             <button

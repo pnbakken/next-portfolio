@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { BASE_PATH } from "../../constants/baseURL";
 import { languages } from "../../tools/languages/languages";
 
 const OriginalFooter = ({ lang = "eng" }) => {
@@ -5,15 +7,18 @@ const OriginalFooter = ({ lang = "eng" }) => {
     <footer>
       <div className="language-select">
         <div>
-          <a href="./?lang=eng">
+          <Link href="/?lang=eng">
             <img
-              src="/icon/language/icons8-great-britain-48.png"
+              src={`${BASE_PATH}/icon/language/icons8-great-britain-48.png`}
               alt="English"
             />
-          </a>{" "}
-          <a href="./?lang=nob">
-            <img src="/icon/language/icons8-norway-48.png" alt="Norsk" />
-          </a>
+          </Link>{" "}
+          <Link href="/?lang=nob">
+            <img
+              src={`${BASE_PATH}/icon/language/icons8-norway-48.png`}
+              alt="Norsk"
+            />
+          </Link>
         </div>
         <button
           className="discrete-button has-text"
