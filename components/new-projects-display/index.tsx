@@ -8,11 +8,7 @@ import { $, $id } from "../../tools/helpers/domSelector";
 const NewProjectsDisplay = ({ lang }) => {
   const displayRef = useRef(null);
   const scrollToRef = () => {
-    if (
-      displayRef &&
-      displayRef.current &&
-      scrollY >= displayRef.current.offsetTop + 200
-    ) {
+    if (displayRef && displayRef.current) {
       displayRef.current.scrollIntoView();
     }
   };
