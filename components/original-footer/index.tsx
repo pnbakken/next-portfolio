@@ -31,11 +31,13 @@ const OriginalFooter = ({ lang = "eng" }) => {
         </button>
       </div>
 
-      <div className="footer-links">
-        <span className="has-text" data-textname="viewOnGH">
-          {languages[lang].viewOnGH}
-        </span>{" "}
-        <a href="https://github.com/pnbakken/next-portfolio">GitHub</a>
+      <div className="footer-links flex-c align-center">
+        <div>
+          <span className="has-text" data-textname="viewOnGH">
+            {languages[lang].viewOnGH}
+          </span>{" "}
+          <a href="https://github.com/pnbakken/next-portfolio">GitHub</a>
+        </div>
       </div>
     </footer>
   );
